@@ -10,7 +10,9 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CheckExprTests {
+public class NumberExprVisitorTests {
+
+    private final NumberExprVisitor numberExprVisitor = new NumberExprVisitor();
 
     @Test
     void testSimpleExpr1() {
@@ -123,7 +125,6 @@ public class CheckExprTests {
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         CheckExprParser parser = new CheckExprParser(tokens);
         CheckExprParser.NumberExprContext tree = parser.numberExpr();
-        NumberExprVisitor tv = new NumberExprVisitor();
-        return tv.visit(tree);
+        return numberExprVisitor.visit(tree);
     }
 }

@@ -9,14 +9,14 @@ check
    ;
 
 booleanExpr
-   : BOOLEAN_LITERAL                            # booleanLiteral
+   : booleanRaw                                 # bLiteral
    | placeholder                                # bHolder
    | numberExpr compareOp numberExpr            # opExpr
    | function                                   # bFunc
    | '(' booleanExpr ')'                        # bBrackets
    | '!' booleanExpr                            # not
-   | booleanExpr AND booleanExpr                # and
-   | booleanExpr OR booleanExpr                 # or
+   | booleanExpr ('and' | 'AND') booleanExpr    # and
+   | booleanExpr ('or' | 'OR') booleanExpr      # or
    ;
 
 numberExpr
@@ -48,8 +48,14 @@ numberOp2
    : '+' | '-'
    ;
 
+
+booleanRaw
+    : 'true'
+    | 'false'
+    ;
+
 placeholder
-    : '${' (IDENTIFIER ('.' IDENTIFIER)*)? '}';
+    : '${' (IDENTIFICATION ('.' IDENTIFICATION)*)? '}';
 
 
 obj
@@ -90,6 +96,10 @@ number
 
 // Lexer
 
+IDENTIFICATION
+   : ('a' .. 'z' | 'A' .. 'Z' | '_') ('a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '.')*
+   ;
+
 SINGLE_LINE_COMMENT
    : '//' .*? (NEWLINE | EOF) -> skip
    ;
@@ -108,15 +118,7 @@ BOOLEAN_LITERAL
     | 'false'
     ;
 
-AND
-    : 'and'
-    | 'AND'
-    ;
 
-OR
-    : 'or'
-    | 'OR'
-    ;
 
 STRING
    : '"' DOUBLE_QUOTE_CHAR* '"'

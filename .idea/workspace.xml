@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CheckExpr.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CheckExpr.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com.mengxinya.ys.checker/CheckExprTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com.mengxinya.ys.checker/NumberExprVisitorTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +49,8 @@
       <recent name="E:\project\bud-checker\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CheckExprTests">
-    <configuration name="CheckExprTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BooleanExprVisitorTests">
+    <configuration name="BooleanExprVisitorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
         <pattern>
@@ -61,13 +59,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.CheckExprTests" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.BooleanExprVisitorTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckExprTests.testOp3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BooleanExprVisitorTests.testAnd0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
         <pattern>
@@ -76,14 +74,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.CheckExprTests" />
-      <option name="METHOD_NAME" value="testOp3" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.BooleanExprVisitorTests" />
+      <option name="METHOD_NAME" value="testAnd0" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckExprTests.testSimpleHolder3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BooleanExprVisitorTests.testSimpleExpr1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
         <pattern>
@@ -92,14 +90,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.CheckExprTests" />
-      <option name="METHOD_NAME" value="testSimpleHolder3" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.BooleanExprVisitorTests" />
+      <option name="METHOD_NAME" value="testSimpleExpr1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckExprTests.testSimpleHolder3_3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NumberExprVisitorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
         <pattern>
@@ -108,14 +106,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.CheckExprTests" />
-      <option name="METHOD_NAME" value="testSimpleHolder3_3" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.NumberExprVisitorTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckExprTests.testSimpleHolder4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NumberExprVisitorTests.testOp1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
         <pattern>
@@ -124,8 +121,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.CheckExprTests" />
-      <option name="METHOD_NAME" value="testSimpleHolder4" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.NumberExprVisitorTests" />
+      <option name="METHOD_NAME" value="testOp1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CheckExprTests" />
-        <item itemvalue="JUnit.CheckExprTests.testOp3" />
-        <item itemvalue="JUnit.CheckExprTests.testSimpleHolder4" />
-        <item itemvalue="JUnit.CheckExprTests.testSimpleHolder3_3" />
-        <item itemvalue="JUnit.CheckExprTests.testSimpleHolder3" />
+        <item itemvalue="JUnit.BooleanExprVisitorTests" />
+        <item itemvalue="JUnit.BooleanExprVisitorTests.testAnd0" />
+        <item itemvalue="JUnit.BooleanExprVisitorTests.testSimpleExpr1" />
+        <item itemvalue="JUnit.NumberExprVisitorTests" />
+        <item itemvalue="JUnit.NumberExprVisitorTests.testOp1" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +154,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
