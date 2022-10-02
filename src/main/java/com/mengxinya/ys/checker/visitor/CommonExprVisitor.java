@@ -18,6 +18,7 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         this.functionGetter = functionGetter;
     }
 
+
     @Override
     public Evaluator<JSONObject, ?> visitCommonHolder(CheckExprParser.CommonHolderContext ctx) {
         return jsonObject -> {
@@ -28,9 +29,9 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
     }
 
     @Override
-    public Evaluator<JSONObject, ?> visitCommonFunc(CheckExprParser.CommonFuncContext ctx) {
-        List<CheckExprParser.ExprContext> list = ctx.function().expr();
-        String funcName = ctx.function().funcName().getText();
+    public Evaluator<JSONObject, ?> visitFunction(CheckExprParser.FunctionContext ctx) {
+        List<CheckExprParser.ExprContext> list = ctx.expr();
+        String funcName = ctx.funcName().getText();
 
         Evaluator<List<?>, ?> evaluator = functionGetter.getFunction(funcName);
         if (evaluator == null) {
@@ -132,7 +133,7 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
 
     @Override
     public Evaluator<JSONObject, Double> visitNum(CheckExprParser.NumContext ctx) {
-        double text = Double.parseDouble(ctx.getText());
+        double text = Double.parseDouble(ctx.number().getText());
         return jsonObject -> text;
     }
 

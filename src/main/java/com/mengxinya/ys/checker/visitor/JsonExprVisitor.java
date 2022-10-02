@@ -2,7 +2,6 @@ package com.mengxinya.ys.checker.visitor;
 
 import antlr4.parser.expr.CheckExprBaseVisitor;
 import antlr4.parser.expr.CheckExprParser;
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.mengxinya.ys.checker.Evaluator;
 import com.mengxinya.ys.checker.FunctionGetter;
@@ -17,9 +16,7 @@ public class JsonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject, 
 
     @Override
     public Evaluator<JSONObject, JSONObject> visitObjExpr(CheckExprParser.ObjExprContext ctx) {
-        String objStr = ctx.obj().getText();
-        JSONObject jsonObject = JSON.parseObject(objStr);
-        return input -> jsonObject;
+        return commonExprVisitor.visitObjExpr(ctx);
     }
 
     @Override

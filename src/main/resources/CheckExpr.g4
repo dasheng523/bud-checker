@@ -5,7 +5,8 @@ grammar CheckExpr;
 }
 
 expr
-    : booleanExpr       # bExpr
+    : function          # fExpr
+    | booleanExpr       # bExpr
     | numberExpr        # nExpr
     | stringExpr        # sExpr
     | objectExpr        # oExpr
@@ -49,7 +50,7 @@ function
 
 
 funcName
-    : IDENTIFIER
+    : IDENTIFICATION
     ;
 
 compareOp
@@ -107,7 +108,7 @@ arr
    ;
 
 number
-   : SYMBOL?
+   : ('+' | '-')?
       ( NUMERIC_LITERAL
       | NUMBER
       )

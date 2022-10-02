@@ -15,9 +15,7 @@ public class StringExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
 
     @Override
     public Evaluator<JSONObject, String> visitStr(CheckExprParser.StrContext ctx) {
-        commonExprVisitor.visitStr(ctx);
-        String text = ctx.string().getText();
-        return input -> text.substring(1, text.length() - 1);
+        return commonExprVisitor.visitStr(ctx);
     }
 
     @Override

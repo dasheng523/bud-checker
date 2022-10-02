@@ -11,4 +11,21 @@ public class VisitorFactories {
             CommonExprVisitor::new
     );
 
+    public static final Function<FunctionGetter, NumberExprVisitor> NumberExprVisitorFactory = makeCacheFunction(
+            NumberExprVisitor::new
+    );
+
+    public static final Function<FunctionGetter, BooleanExprVisitor> BooleanExprVisitorFactory = makeCacheFunction(
+            BooleanExprVisitor::new
+    );
+
+    public static final Function<FunctionGetter, StringExprVisitor> StringExprVisitorFactory = makeCacheFunction(
+            StringExprVisitor::new
+    );
+
+    public static final Function<FunctionGetter, JsonExprVisitor> JsonExprVisitorFactory = makeCacheFunction(
+            JsonExprVisitor::new
+    );
+
+
 }
