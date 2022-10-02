@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="新增函数、字符串、json支持，并重构visitor">
+    <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="修正一些问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/ExprSyntaxException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/ExprSyntaxException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/FunctionGetterMockImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/FunctionGetterMockImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/CommonExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/CommonExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/JsonExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/JsonExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/StringExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/StringExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/VisitorFactories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/VisitorFactories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CheckExpr.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CheckExpr.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com.mengxinya.ys.checker/BooleanExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/visitor/BooleanExprVisitorTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com.mengxinya.ys.checker/NumberExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/visitor/NumberExprVisitorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/Checker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -171,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664708528800</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修正一些问题">
+      <created>1664714155872</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664714155872</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +193,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="BooleanExprVisitor" />
     <MESSAGE value="新增函数、字符串、json支持，并重构visitor" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增函数、字符串、json支持，并重构visitor" />
+    <MESSAGE value="修正一些问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正一些问题" />
   </component>
 </project>
