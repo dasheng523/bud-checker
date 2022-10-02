@@ -4,6 +4,7 @@ import antlr4.parser.expr.CheckExprLexer;
 import antlr4.parser.expr.CheckExprParser;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.mengxinya.ys.checker.visitor.NumberExprVisitor;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -12,7 +13,8 @@ import org.junit.jupiter.api.Test;
 
 public class NumberExprVisitorTests {
 
-    private final NumberExprVisitor numberExprVisitor = new NumberExprVisitor();
+    FunctionGetter functionGetter = new FunctionGetterMockImpl();
+    private final NumberExprVisitor numberExprVisitor = new NumberExprVisitor(functionGetter);
 
     @Test
     void testSimpleExpr1() {

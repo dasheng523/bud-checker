@@ -4,16 +4,17 @@ grammar CheckExpr;
     package antlr4.parser.expr;
 }
 
-check
-   : booleanExpr? EOF
-   ;
+expr
+    : booleanExpr       # bExpr
+    | numberExpr        # nExpr
+    | stringExpr        # sExpr
+    | objectExpr        # oExpr
+    ;
 
 booleanExpr
    : booleanRaw                                 # bLiteral
-   | placeholder                                # bHolder
    | numberExpr compareOp numberExpr            # opExpr
-   | function                                   # bFunc
-   | '(' booleanExpr ')'                        # bBrackets
+   | commonExpr                                 # bCommon
    | '!' booleanExpr                            # not
    | booleanExpr ('and' | 'AND') booleanExpr    # and
    | booleanExpr ('or' | 'OR') booleanExpr      # or
@@ -21,20 +22,34 @@ booleanExpr
 
 numberExpr
    : number                                     # num
-   | placeholder                                # nHolder
-   | function                                   # nFunc
-   | '(' numberExpr ')'                         # nBrackets
+   | commonExpr                                 # nCommon
    | numberExpr numberOp1 numberExpr            # op1
    | numberExpr numberOp2 numberExpr            # op2
    ;
 
-function
-    : IDENTIFIER '(' (funcParam (',' funcParam)*)? ')'
+stringExpr
+    : string                                    # str
+    | commonExpr                                # sCommon
     ;
 
-funcParam
-    : booleanExpr       # bExpr
-    | numberExpr        # nExpr
+objectExpr
+    : obj                                       # objExpr
+    | commonExpr                                # oCommon
+    ;
+
+commonExpr
+    : placeholder                               # commonHolder
+    | function                                  # commonFunc
+    | '(' expr ')'                              # commonBracket
+    ;
+
+function
+    : funcName '(' (expr (',' expr)*)? ')'
+    ;
+
+
+funcName
+    : IDENTIFIER
     ;
 
 compareOp
@@ -52,6 +67,10 @@ numberOp2
 booleanRaw
     : 'true'
     | 'false'
+    ;
+
+string
+    : STRING
     ;
 
 placeholder

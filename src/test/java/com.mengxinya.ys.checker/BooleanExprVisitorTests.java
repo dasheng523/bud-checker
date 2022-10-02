@@ -4,6 +4,7 @@ import antlr4.parser.expr.CheckExprLexer;
 import antlr4.parser.expr.CheckExprParser;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.mengxinya.ys.checker.visitor.BooleanExprVisitor;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -11,7 +12,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class BooleanExprVisitorTests {
-    private final BooleanExprVisitor booleanExprVisitor = new BooleanExprVisitor();
+    FunctionGetter functionGetter = new FunctionGetterMockImpl();
+    BooleanExprVisitor booleanExprVisitor = new BooleanExprVisitor(functionGetter);
 
     @Test
     void testSimpleExpr1() {
