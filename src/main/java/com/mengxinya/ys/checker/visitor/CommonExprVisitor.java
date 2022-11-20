@@ -21,11 +21,9 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
 
     @Override
     public Evaluator<JSONObject, ?> visitCommonHolder(CheckExprParser.CommonHolderContext ctx) {
-        return jsonObject -> {
-            String text = ctx.placeholder().getText();
-            String field = ctx.placeholder().getText().substring(2, text.length() - 1);
-            return CheckerUtils.getJsonValue(jsonObject, field);
-        };
+        String text = ctx.placeholder().getText();
+        String field = ctx.placeholder().getText().substring(2, text.length() - 1);
+        return jsonObject -> CheckerUtils.getJsonValue(jsonObject, field);
     }
 
     @Override
@@ -200,17 +198,4 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
         return json -> (String) evaluator.eval(json);
     }
-//
-//    private Evaluator<JSONObject, ?> choose(CheckExprParser.ExprContext expr) {
-//        if (expr instanceof CheckExprParser.BExprContext) {
-//            return booleanExprVisitor.visit(expr);
-//        } else if (expr instanceof CheckExprParser.NExprContext) {
-//            return numberExprVisitor.visit(expr);
-//        } else if (expr instanceof CheckExprParser.SExprContext) {
-//            return stringExprVisitor.visit(expr);
-//        } else if (expr instanceof CheckExprParser.OExprContext) {
-//            return jsonExprVisitor.visit(expr);
-//        }
-//        throw new ExprSyntaxException();
-//    }
 }

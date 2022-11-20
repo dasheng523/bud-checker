@@ -21,7 +21,7 @@ public class CustomChecker implements Checker<JSONObject> {
         CheckExprLexer lexer = new CheckExprLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         CheckExprParser parser = new CheckExprParser(tokens);
-        CheckExprParser.ExprContext tree = parser.expr();
+        CheckExprParser.BooleanExprContext tree = parser.booleanExpr();
         this.evaluator = visitor.visit(tree);
     }
 
