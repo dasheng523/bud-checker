@@ -17,10 +17,10 @@ var xiaolai = maybe(1, 2, 3, 4, 5);
 var xiaomi = maybe(1, 2, 3, 4, 5);
 var xiaomai = maybe(1, 2, 3, 4, 5);
 
-not(xiaobei, 5);
-not(xiaoku, 1);
-not(xiaolai, 1);
-not(xiaolai, 5);
+notEq(xiaobei, 5);
+notEq(xiaoku, 1);
+notEq(xiaolai, 1);
+notEq(xiaolai, 5);
 gt(xiaomi, xiaoku);
 notNear(xiaomai, xiaolai);
 notNear(xiaolai, xiaoku);

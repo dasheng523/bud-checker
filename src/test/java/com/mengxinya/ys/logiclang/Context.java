@@ -14,7 +14,7 @@ public interface Context {
 
     static Context copy(Context context) {
         if (context instanceof SimpleContext simpleContext) {
-            return new SimpleContext(simpleContext.getMap());
+            return new SimpleContext(new HashMap<>(simpleContext.getMap()));
         }
         return null;
     }

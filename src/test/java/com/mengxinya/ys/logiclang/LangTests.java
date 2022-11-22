@@ -64,7 +64,7 @@ public class LangTests {
         eval(expr);
     }
 
-    private LogicExpr composeExpr(LogicExpr... exprArr) {
+    public static LogicExpr composeExpr(LogicExpr... exprArr) {
         if (exprArr.length == 1) {
             return exprArr[0];
         }
@@ -87,7 +87,7 @@ public class LangTests {
         };
     }
 
-    private LogicExpr composeOrExpr(LogicExpr... exprArr) {
+    public static LogicExpr composeOrExpr(LogicExpr... exprArr) {
         if (exprArr.length == 1) {
             return exprArr[0];
         }
@@ -101,7 +101,7 @@ public class LangTests {
         };
     }
 
-    private MaybeExpr makeMaybeExpr(String varName, List<Integer> valList) {
+    public static MaybeExpr makeMaybeExpr(String varName, List<Integer> valList) {
         return new MaybeExpr() {
             @Override
             public MaybeExpr nextChance() throws LogicLangException {
@@ -118,7 +118,7 @@ public class LangTests {
         };
     }
 
-    private LogicExpr makePrintExpr(String... varNames) {
+    public static LogicExpr makePrintExpr(String... varNames) {
         return context -> {
             for (String varName : varNames) {
                 System.out.println(varName + ": " + context.getValue(varName));
@@ -126,7 +126,7 @@ public class LangTests {
         };
     }
 
-    private LogicExpr makeEqConditionExpr(String varName, Object value) {
+    public static LogicExpr makeEqConditionExpr(String varName, Object value) {
         return context -> {
             if (!context.getValue(varName).equals(value)) {
                 throw new LogicLangException("Eq: " + varName + ": " + value);
@@ -134,7 +134,7 @@ public class LangTests {
         };
     }
 
-    private LogicExpr makeNotNearConditionExpr(String varName1, String varName2) {
+    public static LogicExpr makeNotNearConditionExpr(String varName1, String varName2) {
         return context -> {
             if (Math.abs(
                     (Integer)(context.getValue(varName1)) - (Integer)(context.getValue(varName2))
@@ -144,7 +144,7 @@ public class LangTests {
         };
     }
 
-    private LogicExpr makeGtConditionExpr(String varName1, String varName2) {
+    public static LogicExpr makeGtConditionExpr(String varName1, String varName2) {
         return context -> {
             if (!((Integer)(context.getValue(varName1)) > (Integer)(context.getValue(varName2)))) {
                 throw new LogicLangException("GT");
@@ -152,7 +152,7 @@ public class LangTests {
         };
     }
 
-    private LogicExpr makeNotConditionExpr(String varName, Object value) {
+    public static LogicExpr makeNotConditionExpr(String varName, Object value) {
         return context -> {
             if (context.getValue(varName).equals(value)) {
                 throw new LogicLangException("Not: " + value);
@@ -160,19 +160,19 @@ public class LangTests {
         };
     }
 
-    private LogicExpr makeDistinctConditionExpr(List<String> args) {
+    public static LogicExpr makeDistinctConditionExpr(List<String> args) {
         return context -> {
             if (!(args.stream().map(context::getValue).collect(Collectors.toSet()).size() == args.size())) {
                 throw new LogicLangException("Distinct: " + args);
             }
         };
     }
-    
-    private void eval(LogicExpr expr, Context context) throws LogicLangException {
+
+    public static void eval(LogicExpr expr, Context context) throws LogicLangException {
         expr.execute(context);
     }
 
-    private void eval(LogicExpr expr) throws LogicLangException {
+    public static void eval(LogicExpr expr) throws LogicLangException {
         eval(expr, Context.emptyContext());
     }
 
