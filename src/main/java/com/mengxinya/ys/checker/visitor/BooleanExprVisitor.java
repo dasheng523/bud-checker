@@ -41,6 +41,6 @@ public class BooleanExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObjec
 
     @Override
     public Evaluator<JSONObject, Boolean> visitBCommon(CheckExprParser.BCommonContext ctx) {
-        return commonExprVisitor.visitBCommon(ctx);
+        return null;
     }
 }

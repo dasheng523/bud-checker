@@ -46,17 +46,15 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
     }
 
     @Override
-    public Evaluator<JSONObject, ?> visitCommonBracket(CheckExprParser.CommonBracketContext ctx) {
-        CheckExprParser.ExprContext expr = ctx.expr();
-        return visit(expr);
-    }
-
-
-    @Override
     public Evaluator<JSONObject, Boolean> visitBLiteral(CheckExprParser.BLiteralContext ctx) {
         String text = ctx.getText();
         boolean rs = text.equals("true");
         return json -> rs;
+    }
+
+    @Override
+    public Evaluator<JSONObject, ?> visitBraExpr(CheckExprParser.BraExprContext ctx) {
+        return visit(ctx.expr());
     }
 
     @Override
@@ -66,8 +64,8 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         Evaluator<JSONObject, ?> evaluator1 = visit(ctx.numberExpr(1));
 
         return jsonObject -> {
-            Double num0 = (Double)evaluator0.eval(jsonObject);
-            Double num1 = (Double)evaluator1.eval(jsonObject);
+            Double num0 = Double.parseDouble(evaluator0.eval(jsonObject).toString());
+            Double num1 = Double.parseDouble(evaluator1.eval(jsonObject).toString());
 
             return switch (compareOp) {
                 case ">" -> num0.compareTo(num1) > 0;
@@ -114,20 +112,20 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         };
     }
 
-    @Override
-    public Evaluator<JSONObject, Boolean> visitBCommon(CheckExprParser.BCommonContext ctx) {
-        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
-        return json -> (Boolean) evaluator.eval(json);
-    }
-
-
-    /***** numberExpr ***/
-
-    @Override
-    public Evaluator<JSONObject, Double> visitNCommon(CheckExprParser.NCommonContext ctx) {
-        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
-        return json -> Double.parseDouble(evaluator.eval(json).toString());
-    }
+//    @Override
+//    public Evaluator<JSONObject, Boolean> visitBCommon(CheckExprParser.BCommonContext ctx) {
+//        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
+//        return json -> (Boolean) evaluator.eval(json);
+//    }
+//
+//
+//    /***** numberExpr ***/
+//
+//    @Override
+//    public Evaluator<JSONObject, Double> visitNCommon(CheckExprParser.NCommonContext ctx) {
+//        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
+//        return json -> Double.parseDouble(evaluator.eval(json).toString());
+//    }
 
     @Override
     public Evaluator<JSONObject, Double> visitNum(CheckExprParser.NumContext ctx) {
@@ -142,8 +140,8 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         Evaluator<JSONObject, ?> evaluator0 = visit(ctx.numberExpr(0));
         Evaluator<JSONObject, ?> evaluator1 = visit(ctx.numberExpr(1));
         return jsonObject -> {
-            double num0 = (Double)evaluator0.eval(jsonObject);
-            double num1 = (Double)evaluator1.eval(jsonObject);
+            double num0 = Double.parseDouble(evaluator0.eval(jsonObject).toString());
+            double num1 = Double.parseDouble(evaluator1.eval(jsonObject).toString());
             if (op.equals("+")) {
                 return num0 + num1;
             } else {
@@ -158,8 +156,8 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         Evaluator<JSONObject, ?> evaluator0 = visit(ctx.numberExpr(0));
         Evaluator<JSONObject, ?> evaluator1 = visit(ctx.numberExpr(1));
         return jsonObject -> {
-            double num0 = (Double)evaluator0.eval(jsonObject);
-            double num1 = (Double)evaluator1.eval(jsonObject);
+            double num0 = Double.parseDouble(evaluator0.eval(jsonObject).toString());
+            double num1 = Double.parseDouble(evaluator1.eval(jsonObject).toString());
             if (op.equals("*")) {
                 return num0 * num1;
             } else {
@@ -193,9 +191,9 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         return input -> text.substring(1, text.length() - 1);
     }
 
-    @Override
-    public Evaluator<JSONObject, String> visitSCommon(CheckExprParser.SCommonContext ctx) {
-        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
-        return json -> (String) evaluator.eval(json);
-    }
+//    @Override
+//    public Evaluator<JSONObject, String> visitSCommon(CheckExprParser.SCommonContext ctx) {
+//        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
+//        return json -> (String) evaluator.eval(json);
+//    }
 }

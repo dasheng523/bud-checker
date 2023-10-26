@@ -16,7 +16,7 @@ public class NumberExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
 
     @Override
     public Evaluator<JSONObject, Double> visitNCommon(CheckExprParser.NCommonContext ctx) {
-        return commonExprVisitor.visitNCommon(ctx);
+        return null;
     }
 
     @Override

@@ -1,13 +1,31 @@
 package com.mengxinya.ys.checker;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public interface CheckResult extends EvalResult<List<?>> {
-    static CheckResult successResult(String message) {
-        return new CheckResult() {
+public interface CheckResult<T> extends EvalResult<List<T>> {
+
+    boolean isValid();
+
+    static <T> CheckResult<T> make(boolean valid) {
+        CheckCode code = valid ? CheckCode.VALID : CheckCode.INVALID;
+        return make(valid, code.getMessage());
+    }
+
+    static <T> CheckResult<T> make(boolean valid, String message) {
+        return make(valid, message, new ArrayList<>());
+    }
+
+    static <T> CheckResult<T> make(boolean valid, String message, List<T> data) {
+        return new CheckResult<>() {
+            @Override
+            public boolean isValid() {
+                return valid;
+            }
+
             @Override
             public CheckCode getCheckCode() {
-                return CheckCode.VALID;
+                return valid ? CheckCode.VALID : CheckCode.INVALID;
             }
 
             @Override
@@ -16,30 +34,7 @@ public interface CheckResult extends EvalResult<List<?>> {
             }
 
             @Override
-            public List<?> getData() {
-                return List.of();
-            }
-        };
-    }
-
-    static CheckResult failResult(String message) {
-        return failResult(message, List.of());
-    }
-
-    static CheckResult failResult(String message, List<Object> data) {
-        return new CheckResult() {
-            @Override
-            public CheckCode getCheckCode() {
-                return CheckCode.INVALID;
-            }
-
-            @Override
-            public String getMessage() {
-                return message;
-            }
-
-            @Override
-            public List<?> getData() {
+            public List<T> getData() {
                 return data;
             }
         };

@@ -10,6 +10,7 @@ expr
     | numberExpr        # nExpr
     | stringExpr        # sExpr
     | objectExpr        # oExpr
+    | '(' expr ')'      # braExpr
     ;
 
 booleanExpr
@@ -41,7 +42,6 @@ objectExpr
 commonExpr
     : placeholder                               # commonHolder
     | function                                  # commonFunc
-    | '(' expr ')'                              # commonBracket
     ;
 
 function

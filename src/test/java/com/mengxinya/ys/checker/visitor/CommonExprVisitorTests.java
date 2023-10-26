@@ -2,6 +2,7 @@ package com.mengxinya.ys.checker.visitor;
 
 import antlr4.parser.expr.CheckExprLexer;
 import antlr4.parser.expr.CheckExprParser;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.mengxinya.ys.checker.Evaluator;
 import com.mengxinya.ys.checker.FunctionGetter;
@@ -15,6 +16,38 @@ import org.junit.jupiter.api.Test;
 public class CommonExprVisitorTests {
     FunctionGetter functionGetter = new FunctionGetterMockImpl();
     CommonExprVisitor commonExprVisitor = VisitorFactories.CommonExprVisitorFactory.apply(functionGetter);
+
+    @Test
+    void testBooleanExpr1() {
+        String expr = "true";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        boolean rs = (boolean)evaluator.eval(null);
+        Assertions.assertTrue(rs);
+    }
+
+    @Test
+    void testBooleanExpr2() {
+        String expr = "false";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        boolean rs = (boolean)evaluator.eval(null);
+        Assertions.assertFalse(rs);
+    }
+
+    @Test
+    void testBHolder() {
+        String expr = "${isDel}";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        boolean rs = (boolean)evaluator.eval(JSON.parseObject("{\"name\": \"YS\", \"isDel\": true}"));
+        Assertions.assertTrue(rs);
+    }
+
+    @Test
+    void testOpExpr1() {
+        String expr = "${price} > 0";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        boolean rs = (boolean)evaluator.eval(JSON.parseObject("{\"name\": \"YS\", \"price\": 5}"));
+        Assertions.assertTrue(rs);
+    }
 
     @Test
     void testSimpleExpr1() {
@@ -45,6 +78,38 @@ public class CommonExprVisitorTests {
     }
 
     @Test
+    void testSimpleNumber2() {
+        String expr = "(-10)";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        Double rs = (Double) evaluator.eval(null);
+        Assertions.assertEquals(-10, rs);
+    }
+
+    @Test
+    void testOp1() {
+        String expr = "${order.0} * ${order.1}";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        Double rs = (Double)evaluator.eval(JSON.parseObject("{\"order\": [1.1, 2.0]}"));
+        Assertions.assertEquals(2.2, rs);
+    }
+
+    @Test
+    void testOp2() {
+        String expr = "${order.0} + ${order.1}";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        Double rs = (Double)evaluator.eval(JSON.parseObject("{\"order\": [1.1, 2.0]}"));
+        Assertions.assertEquals(3.1, rs);
+    }
+
+    @Test
+    void testOp3() {
+        String expr = "5 / 2";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        Double rs = (Double)evaluator.eval(JSON.parseObject(null));
+        Assertions.assertEquals(2.5, rs);
+    }
+
+    @Test
     void testFunction1() {
         String expr = """
                 abs(-1)
@@ -61,6 +126,14 @@ public class CommonExprVisitorTests {
                 """;
         Evaluator<JSONObject, ?> evaluator = eval(expr);
         Boolean rs = (Boolean)evaluator.eval(null);
+        Assertions.assertTrue(rs);
+    }
+
+    @Test
+    void testFunction3() {
+        String expr = "isString(${order.0})";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        Boolean rs = (Boolean)evaluator.eval(JSON.parseObject("{\"order\": [\"aaa\", 2.0]}"));
         Assertions.assertTrue(rs);
     }
 
