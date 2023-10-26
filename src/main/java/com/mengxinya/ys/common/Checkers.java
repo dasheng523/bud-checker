@@ -1,4 +1,4 @@
-package com.mengxinya.ys.checker;
+package com.mengxinya.ys.common;
 
 public interface Checkers {
     static <T> SimpleChecker<Comparable<T>> min(T value, String message) {

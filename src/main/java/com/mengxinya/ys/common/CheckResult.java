@@ -1,4 +1,4 @@
-package com.mengxinya.ys.checker;
+package com.mengxinya.ys.common;
 
 import java.util.ArrayList;
 import java.util.List;

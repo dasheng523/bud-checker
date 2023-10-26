@@ -1,8 +1,5 @@
-package com.mengxinya.ys.checker.visitor;
+package com.mengxinya.ys.parser.visitor;
 
-import com.mengxinya.ys.checker.CheckCode;
-import com.mengxinya.ys.checker.SimpleChecker;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 

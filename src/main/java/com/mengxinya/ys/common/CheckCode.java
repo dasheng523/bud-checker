@@ -1,4 +1,4 @@
-package com.mengxinya.ys.checker;
+package com.mengxinya.ys.common;
 
 public enum CheckCode {
     // 有效

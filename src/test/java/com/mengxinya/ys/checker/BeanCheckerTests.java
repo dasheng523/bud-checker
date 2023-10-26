@@ -1,0 +1,76 @@
+package com.mengxinya.ys.checker;
+
+import com.mengxinya.ys.checker.beanchecker.BeanChecker;
+import com.mengxinya.ys.checker.beanchecker.CheckDate;
+import com.mengxinya.ys.checker.beanchecker.CheckExpr;
+import com.mengxinya.ys.checker.beanchecker.CheckPhone;
+import com.mengxinya.ys.common.CheckResult;
+import com.mengxinya.ys.common.Evaluator;
+import com.mengxinya.ys.parser.FunctionGetter;
+import com.mengxinya.ys.parser.FunctionGetterMockImpl;
+import lombok.Getter;
+import lombok.Setter;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+public class BeanCheckerTests {
+    private final BeanChecker<TestBean> checker;
+
+    public BeanCheckerTests() {
+        FunctionGetter functionGetter = new FunctionGetterMockImpl();
+        FunctionGetter customGetter = funcName -> {
+            if (funcName.equals("code")) {
+                return (Evaluator<List<?>, Boolean>) input -> {
+                    Object code = input.get(0);
+                    Object name = input.get(1);
+                    return code.equals("110010") && name.equals("广东省");
+                };
+            }
+            return null;
+        };
+        checker = new BeanChecker<>(FunctionGetter.compose(List.of(functionGetter, customGetter)));
+    }
+
+    @Test
+    void test1() {
+        TestBean bean = new TestBean();
+        bean.setAge(18);
+        bean.setName("test");
+        bean.setAddress("ffdafd asdfasd fasd asdf ");
+        bean.setPhone("18888888888");
+        bean.setBirthday("2000-12-12");
+        bean.setProvinceCode("110010");
+        bean.setProvinceName("广东省");
+
+        CheckResult<String> result = checker.eval(bean);
+        Assertions.assertTrue(result.isValid());
+    }
+
+
+    @Getter
+    @Setter
+    static class TestBean {
+        @CheckExpr("${age} >= 0 and ${age} < 200")
+        private Integer age;
+
+        @CheckExpr("len(${name}) > 3 and len(${name}) < 50")
+        private String name;
+
+        @CheckExpr("len(${address}) < 200")
+        private String address;
+
+        @CheckPhone
+        private String phone;
+
+        @CheckDate
+        private String birthday;
+
+        @CheckExpr(value = "code(${provinceCode}, ${provinceName})", msg = "省份不正确")
+        private String provinceCode;
+
+        private String provinceName;
+
+    }
+}

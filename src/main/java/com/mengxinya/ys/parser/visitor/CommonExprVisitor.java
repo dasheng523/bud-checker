@@ -1,13 +1,13 @@
-package com.mengxinya.ys.checker.visitor;
+package com.mengxinya.ys.parser.visitor;
 
 import antlr4.parser.expr.CheckExprBaseVisitor;
 import antlr4.parser.expr.CheckExprParser;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.mengxinya.ys.checker.CheckerUtils;
-import com.mengxinya.ys.checker.Evaluator;
+import com.mengxinya.ys.common.CheckerUtils;
+import com.mengxinya.ys.common.Evaluator;
 import com.mengxinya.ys.checker.ExprSyntaxException;
-import com.mengxinya.ys.checker.FunctionGetter;
+import com.mengxinya.ys.parser.FunctionGetter;
 
 import java.util.List;
 
@@ -112,21 +112,6 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         };
     }
 
-//    @Override
-//    public Evaluator<JSONObject, Boolean> visitBCommon(CheckExprParser.BCommonContext ctx) {
-//        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
-//        return json -> (Boolean) evaluator.eval(json);
-//    }
-//
-//
-//    /***** numberExpr ***/
-//
-//    @Override
-//    public Evaluator<JSONObject, Double> visitNCommon(CheckExprParser.NCommonContext ctx) {
-//        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
-//        return json -> Double.parseDouble(evaluator.eval(json).toString());
-//    }
-
     @Override
     public Evaluator<JSONObject, Double> visitNum(CheckExprParser.NumContext ctx) {
         double text = Double.parseDouble(ctx.number().getText());
@@ -190,10 +175,4 @@ public class CommonExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject
         String text = ctx.string().getText();
         return input -> text.substring(1, text.length() - 1);
     }
-
-//    @Override
-//    public Evaluator<JSONObject, String> visitSCommon(CheckExprParser.SCommonContext ctx) {
-//        Evaluator<JSONObject, ?> evaluator = visit(ctx.commonExpr());
-//        return json -> (String) evaluator.eval(json);
-//    }
 }

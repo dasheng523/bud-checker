@@ -1,10 +1,12 @@
-package com.mengxinya.ys.checker;
+package com.mengxinya.ys.common;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class CheckerUtils {
     public static Object getJsonValue(JSONObject jsonObject, String field) {
@@ -55,5 +57,20 @@ public class CheckerUtils {
         } else {
             throw new JSONException("The field is not exists: " + Arrays.toString(fields));
         }
+    }
+
+    public static <T, R> Checker<T, R> compose(List<Checker<T, R>> checkers) {
+        return input -> {
+            boolean valid = true;
+            List<R> dataList = new ArrayList<>();
+            List<String> msgList = new ArrayList<>();
+            for (Checker<T, R> checker: checkers) {
+                CheckResult<R> cr = checker.eval(input);
+                valid = valid && cr.isValid();
+                dataList.addAll(cr.getData());
+                msgList.add(cr.getMessage());
+            }
+            return CheckResult.make(valid, String.join("\n", msgList), dataList);
+        };
     }
 }

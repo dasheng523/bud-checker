@@ -1,6 +1,6 @@
-package com.mengxinya.ys.checker.visitor;
+package com.mengxinya.ys.parser.visitor;
 
-import com.mengxinya.ys.checker.FunctionGetter;
+import com.mengxinya.ys.parser.FunctionGetter;
 
 import java.util.function.Function;
 
