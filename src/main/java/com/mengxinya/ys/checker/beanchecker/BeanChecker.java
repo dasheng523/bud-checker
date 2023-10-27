@@ -5,12 +5,11 @@ import com.mengxinya.ys.checker.SimpleBooleanChecker;
 import com.mengxinya.ys.common.CheckResult;
 import com.mengxinya.ys.common.Checker;
 import com.mengxinya.ys.common.CheckerUtils;
-import com.mengxinya.ys.parser.FunctionGetter;
+import com.mengxinya.ys.funcgetter.FunctionGetter;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class BeanChecker<T> implements Checker<T, String> {
 

@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.mengxinya.ys.common.CheckerUtils;
 import com.mengxinya.ys.common.Evaluator;
 import com.mengxinya.ys.checker.ExprSyntaxException;
-import com.mengxinya.ys.parser.FunctionGetter;
+import com.mengxinya.ys.funcgetter.FunctionGetter;
 
 import java.util.List;
 

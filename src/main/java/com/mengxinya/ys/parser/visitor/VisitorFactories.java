@@ -1,6 +1,6 @@
 package com.mengxinya.ys.parser.visitor;
 
-import com.mengxinya.ys.parser.FunctionGetter;
+import com.mengxinya.ys.funcgetter.FunctionGetter;
 
 import java.util.function.Function;
 

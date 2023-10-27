@@ -5,8 +5,8 @@ import antlr4.parser.expr.CheckExprParser;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.mengxinya.ys.common.Evaluator;
-import com.mengxinya.ys.parser.FunctionGetter;
-import com.mengxinya.ys.parser.FunctionGetterMockImpl;
+import com.mengxinya.ys.funcgetter.FunctionGetter;
+import com.mengxinya.ys.funcgetter.FunctionGetterBaseImpl;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 public class NumberExprVisitorTests {
 
-    FunctionGetter functionGetter = new FunctionGetterMockImpl();
+    FunctionGetter functionGetter = new FunctionGetterBaseImpl();
     private final NumberExprVisitor numberExprVisitor = VisitorFactories.NumberExprVisitorFactory.apply(functionGetter);
 
     @Test

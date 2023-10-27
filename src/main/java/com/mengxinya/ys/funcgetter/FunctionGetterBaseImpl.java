@@ -1,10 +1,10 @@
-package com.mengxinya.ys.parser;
+package com.mengxinya.ys.funcgetter;
 
 import com.mengxinya.ys.common.Evaluator;
 
 import java.util.List;
 
-public class FunctionGetterMockImpl implements FunctionGetter {
+public class FunctionGetterBaseImpl implements FunctionGetter {
     @Override
     public Evaluator<List<?>, ?> getFunction(String funcName) {
         return switch (funcName) {
@@ -14,6 +14,5 @@ public class FunctionGetterMockImpl implements FunctionGetter {
             case "notnull" -> input -> input.get(0) != null;
             default -> null;
         };
-
     }
 }

@@ -4,7 +4,7 @@ import antlr4.parser.expr.CheckExprBaseVisitor;
 import antlr4.parser.expr.CheckExprParser;
 import com.alibaba.fastjson.JSONObject;
 import com.mengxinya.ys.common.Evaluator;
-import com.mengxinya.ys.parser.FunctionGetter;
+import com.mengxinya.ys.funcgetter.FunctionGetter;
 
 public class NumberExprVisitor extends CheckExprBaseVisitor<Evaluator<JSONObject, Double>> {
 

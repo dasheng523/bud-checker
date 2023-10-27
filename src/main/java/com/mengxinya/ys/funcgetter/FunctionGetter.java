@@ -1,4 +1,4 @@
-package com.mengxinya.ys.parser;
+package com.mengxinya.ys.funcgetter;
 
 import com.mengxinya.ys.common.Evaluator;
 

@@ -4,15 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="重构一些代码">
+    <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="调整代码，注意CheckExpr的子注解没有实现">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CustomCheckParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CustomCheckParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/SimpleBooleanChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/SimpleBooleanChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/BeanChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/BeanChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckPhone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/CheckerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/CheckerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetterMockImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetterMockImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckDate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckNotNull.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckPhone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/funcgetter/FunctionGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetterMockImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/funcgetter/FunctionGetterBaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/CommonExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/CommonExprVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/JsonExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/JsonExprVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/NumberExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/NumberExprVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/SimpleCheckerExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/SimpleCheckerExprVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/StringExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/StringExprVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/VisitorFactories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/VisitorFactories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/BeanCheckerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/BeanCheckerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/CommonExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/CommonExprVisitorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/NumberExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/NumberExprVisitorTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +37,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -237,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698329686842</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="调整代码，注意CheckExpr的子注解没有实现">
+      <option name="closed" value="true" />
+      <created>1698371456099</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698371456099</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,6 +286,7 @@
     <MESSAGE value="逻辑" />
     <MESSAGE value="修正visitor问题，解决简单的校验" />
     <MESSAGE value="重构一些代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构一些代码" />
+    <MESSAGE value="调整代码，注意CheckExpr的子注解没有实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整代码，注意CheckExpr的子注解没有实现" />
   </component>
 </project>

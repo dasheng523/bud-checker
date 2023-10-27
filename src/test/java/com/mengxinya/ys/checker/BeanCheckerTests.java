@@ -3,8 +3,8 @@ package com.mengxinya.ys.checker;
 import com.mengxinya.ys.checker.beanchecker.*;
 import com.mengxinya.ys.common.CheckResult;
 import com.mengxinya.ys.common.Evaluator;
-import com.mengxinya.ys.parser.FunctionGetter;
-import com.mengxinya.ys.parser.FunctionGetterMockImpl;
+import com.mengxinya.ys.funcgetter.FunctionGetter;
+import com.mengxinya.ys.funcgetter.FunctionGetterBaseImpl;
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
@@ -16,7 +16,7 @@ public class BeanCheckerTests {
     private final BeanChecker<TestBean> checker;
 
     public BeanCheckerTests() {
-        FunctionGetter functionGetter = new FunctionGetterMockImpl();
+        FunctionGetter functionGetter = new FunctionGetterBaseImpl();
         FunctionGetter customGetter = funcName -> {
             if (funcName.equals("code")) {
                 return (Evaluator<List<?>, Boolean>) input -> {
@@ -76,17 +76,13 @@ public class BeanCheckerTests {
         @CheckExpr("len(${address}) < 200")
         private String address;
 
-        @CheckNotNull       // TODO 不会做
-        @CheckPhone
         private String phone;
 
-        @CheckDate
         private String birthday;
 
         @CheckExpr(value = "code(${provinceCode}, ${provinceName})", msg = "省份不正确")
         private String provinceCode;
 
         private String provinceName;
-
     }
 }

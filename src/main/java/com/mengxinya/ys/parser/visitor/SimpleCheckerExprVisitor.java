@@ -1,7 +1,7 @@
 package com.mengxinya.ys.parser.visitor;
 
 import antlr4.parser.expr.CheckExprBaseVisitor;
-import com.mengxinya.ys.parser.FunctionGetter;
+import com.mengxinya.ys.funcgetter.FunctionGetter;
 import com.mengxinya.ys.common.SimpleChecker;
 
 public class SimpleCheckerExprVisitor<T> extends CheckExprBaseVisitor<SimpleChecker<T>> {
