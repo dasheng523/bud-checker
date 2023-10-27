@@ -61,16 +61,13 @@ public class CheckerUtils {
 
     public static <T, R> Checker<T, R> compose(List<Checker<T, R>> checkers) {
         return input -> {
-            boolean valid = true;
-            List<R> dataList = new ArrayList<>();
-            List<String> msgList = new ArrayList<>();
             for (Checker<T, R> checker: checkers) {
                 CheckResult<R> cr = checker.eval(input);
-                valid = valid && cr.isValid();
-                dataList.addAll(cr.getData());
-                msgList.add(cr.getMessage());
+                if (!cr.isValid()) {
+                    return CheckResult.make(false, cr.getMessage(), cr.getData());
+                }
             }
-            return CheckResult.make(valid, String.join("\n", msgList), dataList);
+            return CheckResult.make(true);
         };
     }
 }

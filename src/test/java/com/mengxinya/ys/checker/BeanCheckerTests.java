@@ -1,9 +1,6 @@
 package com.mengxinya.ys.checker;
 
-import com.mengxinya.ys.checker.beanchecker.BeanChecker;
-import com.mengxinya.ys.checker.beanchecker.CheckDate;
-import com.mengxinya.ys.checker.beanchecker.CheckExpr;
-import com.mengxinya.ys.checker.beanchecker.CheckPhone;
+import com.mengxinya.ys.checker.beanchecker.*;
 import com.mengxinya.ys.common.CheckResult;
 import com.mengxinya.ys.common.Evaluator;
 import com.mengxinya.ys.parser.FunctionGetter;
@@ -38,7 +35,7 @@ public class BeanCheckerTests {
         TestBean bean = new TestBean();
         bean.setAge(18);
         bean.setName("test");
-        bean.setAddress("ffdafd asdfasd fasd asdf ");
+        bean.setAddress("ffdafd asdfasd fasd asdf");
         bean.setPhone("18888888888");
         bean.setBirthday("2000-12-12");
         bean.setProvinceCode("110010");
@@ -48,6 +45,23 @@ public class BeanCheckerTests {
         Assertions.assertTrue(result.isValid());
     }
 
+    @Test
+    void test2() {
+        TestBean bean = new TestBean();
+        bean.setAge(5);
+        bean.setName("a");
+        bean.setAddress("aaaa");
+        bean.setPhone("18888888888");
+        bean.setBirthday("20001-12-12");
+        bean.setProvinceCode("110010");
+        bean.setProvinceName("广东省");
+
+        CheckResult<String> result = checker.eval(bean);
+        Assertions.assertFalse(result.isValid());
+        Assertions.assertEquals(result.getData().size(), 1);
+        System.out.println(result.getMessage());
+    }
+
 
     @Getter
     @Setter
@@ -55,12 +69,14 @@ public class BeanCheckerTests {
         @CheckExpr("${age} >= 0 and ${age} < 200")
         private Integer age;
 
+        @CheckExpr("notnull(${name})")
         @CheckExpr("len(${name}) > 3 and len(${name}) < 50")
         private String name;
 
         @CheckExpr("len(${address}) < 200")
         private String address;
 
+        @CheckNotNull       // TODO 不会做
         @CheckPhone
         private String phone;
 

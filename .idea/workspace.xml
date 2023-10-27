@@ -4,36 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="修正visitor问题，解决简单的校验">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/SimpleBooleanChecker.java" afterDir="false" />
+    <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="重构一些代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CheckCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/CheckCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CheckExprVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CheckResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/CheckResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/Checker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CheckerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/CheckerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/Checkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/Checkers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CustomCheckParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CustomCheckParams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/EvalResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/EvalResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/Evaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/FunctionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/FunctionGetterMockImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetterMockImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/SimpleChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/SimpleChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/parser/SimpleCheckerParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/BooleanExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/CommonExprToSqlQueryVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/CommonExprToSqlQueryVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/CommonExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/CommonExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/JsonExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/JsonExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/NumberExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/NumberExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/SimpleCheckerExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/SimpleCheckerExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/StringExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/StringExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/visitor/VisitorFactories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/VisitorFactories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/CheckerUtilsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/CheckerUtilsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/visitor/BooleanExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitorTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/visitor/CommonExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/CommonExprVisitorTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/visitor/NumberExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/NumberExprVisitorTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/visitor/SimpleCheckerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/SimpleCheckerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/BeanChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/BeanChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckPhone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/CheckerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/common/CheckerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetterMockImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetterMockImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/BeanCheckerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/BeanCheckerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +80,7 @@
       <recent name="com.mengxinya.ys.checker.visitor" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BeanCheckerTests.test1">
+  <component name="RunManager" selected="JUnit.BeanCheckerTests.test2">
     <configuration name="BeanCheckerTests.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
@@ -113,6 +92,22 @@
       <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker" />
       <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.BeanCheckerTests" />
       <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BeanCheckerTests.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bud-checker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mengxinya.ys.checker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.BeanCheckerTests" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,29 +160,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonExprVisitorTests.testSimpleNumber2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bud-checker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mengxinya.ys.checker.visitor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker.visitor" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.visitor.CommonExprVisitorTests" />
-      <option name="METHOD_NAME" value="testSimpleNumber2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BeanCheckerTests.test2" />
         <item itemvalue="JUnit.BeanCheckerTests.test1" />
         <item itemvalue="JUnit.CommonExprVisitorTests.testOp3" />
         <item itemvalue="JUnit.CommonExprVisitorTests" />
         <item itemvalue="JUnit.CommonExprVisitorTests.testFunction3" />
-        <item itemvalue="JUnit.CommonExprVisitorTests.testSimpleNumber2" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698292214986</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="重构一些代码">
+      <option name="closed" value="true" />
+      <created>1698329686842</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698329686842</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,6 +264,7 @@
     <MESSAGE value="自定义校验器" />
     <MESSAGE value="逻辑" />
     <MESSAGE value="修正visitor问题，解决简单的校验" />
-    <option name="LAST_COMMIT_MESSAGE" value="修正visitor问题，解决简单的校验" />
+    <MESSAGE value="重构一些代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构一些代码" />
   </component>
 </project>

@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@CheckExpr("len($this) == 11")
-public @interface CheckPhone {
+@CheckExpr("notnull($this)")
+public @interface CheckNotNull {
 }

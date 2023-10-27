@@ -10,6 +10,7 @@ import com.mengxinya.ys.parser.FunctionGetter;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BeanChecker<T> implements Checker<T, String> {
 
@@ -38,32 +39,34 @@ public class BeanChecker<T> implements Checker<T, String> {
 
     private Checker<JSONObject, String> fieldToChecker(Field field) {
         String name = field.getName();
-        CheckExpr checkExpr = field.getAnnotation(CheckExpr.class);
+        CheckExpr[] checkExprs = field.getAnnotationsByType(CheckExpr.class);
 
-        // 替换$this关键字
-        String expr = checkExpr.value().trim().replace("${this}", "${" + name + "}");
-        SimpleBooleanChecker booleanChecker = new SimpleBooleanChecker(functionGetter, expr);
-
-        return input -> {
-            CheckResult<Void> result = booleanChecker.eval(input);
-            if (result.isValid()) {
-                return CheckResult.make(true);
-            }
-            else {
-                String msg;
-                if (checkExpr.msg().isEmpty()) {
-                    msg = name + "校验不通过";
+        List<Checker<JSONObject, String>> checkers = Arrays.stream(checkExprs).map(checkExpr -> {
+            String expr = checkExpr.value().trim().replace("${this}", "${" + name + "}");  // 替换$this关键字
+            SimpleBooleanChecker booleanChecker = new SimpleBooleanChecker(functionGetter, expr);
+            return (Checker<JSONObject, String>) input -> {
+                CheckResult<Void> result = booleanChecker.eval(input);
+                if (result.isValid()) {
+                    return CheckResult.make(result.isValid());
                 }
                 else {
-                    msg = checkExpr.msg();
-                }
+                    String msg;
+                    if (checkExpr.msg().isEmpty()) {
+                        msg = name + "校验不通过";
+                    }
+                    else {
+                        msg = checkExpr.msg();
+                    }
 
-                return CheckResult.make(false, msg, List.of(msg));
-            }
-        };
+                    return CheckResult.make(false, msg, List.of(msg));
+                }
+            };
+        }).toList();
+
+        return CheckerUtils.compose(checkers);
     }
 
     private List<Field> findFields(Class<?> tClass) {
-        return Arrays.stream(tClass.getFields()).filter(field -> field.isAnnotationPresent(CheckExpr.class)).toList();
+        return Arrays.stream(tClass.getDeclaredFields()).filter(field -> field.getAnnotationsByType(CheckExpr.class).length > 0).toList();
     }
 }
