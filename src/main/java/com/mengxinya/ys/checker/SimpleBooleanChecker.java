@@ -8,7 +8,6 @@ import com.mengxinya.ys.common.Checker;
 import com.mengxinya.ys.common.Evaluator;
 import com.mengxinya.ys.funcgetter.FunctionGetter;
 import com.mengxinya.ys.parser.visitor.CommonExprVisitor;
-import com.mengxinya.ys.parser.visitor.VisitorFactories;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -17,7 +16,7 @@ public class SimpleBooleanChecker implements Checker<JSONObject, Void> {
     private final Evaluator<JSONObject, ?> evaluator;
 
     public SimpleBooleanChecker(FunctionGetter functionGetter, String expr) {
-        CommonExprVisitor commonExprVisitor = VisitorFactories.CommonExprVisitorFactory.apply(functionGetter);
+        CommonExprVisitor commonExprVisitor = new CommonExprVisitor(functionGetter);
 
         CharStream input = CharStreams.fromString(expr);
         CheckExprLexer lexer = new CheckExprLexer(input);

@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 public class CommonExprVisitorTests {
     FunctionGetter functionGetter = new FunctionGetterBaseImpl();
-    CommonExprVisitor commonExprVisitor = VisitorFactories.CommonExprVisitorFactory.apply(functionGetter);
+    CommonExprVisitor commonExprVisitor = new CommonExprVisitor(functionGetter);
 
     @Test
     void testBooleanExpr1() {
@@ -134,6 +134,22 @@ public class CommonExprVisitorTests {
         String expr = "isString(${order.0})";
         Evaluator<JSONObject, ?> evaluator = eval(expr);
         Boolean rs = (Boolean)evaluator.eval(JSON.parseObject("{\"order\": [\"aaa\", 2.0]}"));
+        Assertions.assertTrue(rs);
+    }
+
+    @Test
+    void testOr1() {
+        String expr = "(${price} > 0 or false)";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        boolean rs = (Boolean)evaluator.eval(JSON.parseObject("{\"name\": \"YS\", \"price\": 5.0}"));
+        Assertions.assertTrue(rs);
+    }
+
+    @Test
+    void testOr2() {
+        String expr = "(${price} > 5 and true or 4>3)";
+        Evaluator<JSONObject, ?> evaluator = eval(expr);
+        boolean rs = (Boolean)evaluator.eval(JSON.parseObject("{\"name\": \"YS\", \"price\": 5.0}"));
         Assertions.assertTrue(rs);
     }
 

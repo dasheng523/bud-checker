@@ -4,28 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="调整代码，注意CheckExpr的子注解没有实现">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="50c0b816-8650-40a6-b896-eb738d37c124" name="变更" comment="修改类名">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CustomCheckParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CustomCheckParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/CustomCheckParams.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/DuplicationCheckParams.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/Functions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/OperateType.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/SimpleBooleanChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/SimpleBooleanChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/BeanChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/BeanChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckNotNull.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/beanchecker/CheckPhone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/funcgetter/FunctionGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/FunctionGetterMockImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/funcgetter/FunctionGetterBaseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/CommonExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/CommonExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/JsonExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/JsonExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/NumberExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/NumberExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/SimpleCheckerExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/SimpleCheckerExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/StringExprVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/StringExprVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/VisitorFactories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/VisitorFactories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/BeanCheckerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/checker/BeanCheckerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/SqlCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/checker/SqlExecutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/CommonExprToSqlQueryVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/JsonExprVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/NumberExprVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/SimpleCheckerExprVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/StringExprVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mengxinya/ys/parser/visitor/VisitorFactories.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/BooleanExprVisitorTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/CommonExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/CommonExprVisitorTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/NumberExprVisitorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/NumberExprVisitorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/NumberExprVisitorTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mengxinya/ys/parser/visitor/SimpleCheckerTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +91,7 @@
       <recent name="com.mengxinya.ys.checker.visitor" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BeanCheckerTests.test2">
+  <component name="RunManager" selected="JUnit.CommonExprVisitorTests">
     <configuration name="BeanCheckerTests.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
@@ -130,44 +128,44 @@
       <module name="bud-checker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mengxinya.ys.checker.visitor.*" />
+          <option name="PATTERN" value="com.mengxinya.ys.parser.visitor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker.visitor" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.visitor.CommonExprVisitorTests" />
+      <option name="PACKAGE_NAME" value="com.mengxinya.ys.parser.visitor" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.parser.visitor.CommonExprVisitorTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonExprVisitorTests.testFunction3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonExprVisitorTests.testOr1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mengxinya.ys.checker.visitor.*" />
+          <option name="PATTERN" value="com.mengxinya.ys.parser.visitor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker.visitor" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.visitor.CommonExprVisitorTests" />
-      <option name="METHOD_NAME" value="testFunction3" />
+      <option name="PACKAGE_NAME" value="com.mengxinya.ys.parser.visitor" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.parser.visitor.CommonExprVisitorTests" />
+      <option name="METHOD_NAME" value="testOr1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonExprVisitorTests.testOp3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommonExprVisitorTests.testOr2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bud-checker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mengxinya.ys.checker.visitor.*" />
+          <option name="PATTERN" value="com.mengxinya.ys.parser.visitor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.mengxinya.ys.checker.visitor" />
-      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.checker.visitor.CommonExprVisitorTests" />
-      <option name="METHOD_NAME" value="testOp3" />
+      <option name="PACKAGE_NAME" value="com.mengxinya.ys.parser.visitor" />
+      <option name="MAIN_CLASS_NAME" value="com.mengxinya.ys.parser.visitor.CommonExprVisitorTests" />
+      <option name="METHOD_NAME" value="testOr2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommonExprVisitorTests" />
+        <item itemvalue="JUnit.CommonExprVisitorTests.testOr2" />
+        <item itemvalue="JUnit.CommonExprVisitorTests.testOr1" />
         <item itemvalue="JUnit.BeanCheckerTests.test2" />
         <item itemvalue="JUnit.BeanCheckerTests.test1" />
-        <item itemvalue="JUnit.CommonExprVisitorTests.testOp3" />
-        <item itemvalue="JUnit.CommonExprVisitorTests" />
-        <item itemvalue="JUnit.CommonExprVisitorTests.testFunction3" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698371456099</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="修改类名">
+      <option name="closed" value="true" />
+      <created>1698388468474</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698388468474</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,6 +293,7 @@
     <MESSAGE value="修正visitor问题，解决简单的校验" />
     <MESSAGE value="重构一些代码" />
     <MESSAGE value="调整代码，注意CheckExpr的子注解没有实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="调整代码，注意CheckExpr的子注解没有实现" />
+    <MESSAGE value="修改类名" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改类名" />
   </component>
 </project>
