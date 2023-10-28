@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 
-public class BeanChecker<T> implements Checker<T, String> {
+public class BeanChecker implements Checker<Object, String> {
 
     private final FunctionGetter functionGetter;
 
@@ -21,7 +21,7 @@ public class BeanChecker<T> implements Checker<T, String> {
 
 
     @Override
-    public CheckResult<String> eval(T input) {
+    public CheckResult<String> eval(Object input) {
         Class<?> tClass = input.getClass();
         Checker<JSONObject, String> checker = toClassChecker(tClass);
         return checker.eval((JSONObject)JSONObject.toJSON(input));

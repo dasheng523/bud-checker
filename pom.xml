@@ -6,7 +6,7 @@
 
     <groupId>com.mengxinya.ys</groupId>
     <artifactId>bud-checker</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -76,5 +76,19 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>ys-nexus</id>
+            <url>
+                http://repo.mengxinya.com/repository/maven-releases/
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>ys-nexus</id>
+            <url>
+                http://repo.mengxinya.com/repository/maven-snapshots/
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

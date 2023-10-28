@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 public class BeanCheckerTests {
-    private final BeanChecker<TestBean> checker;
+    private final BeanChecker checker;
 
     public BeanCheckerTests() {
         FunctionGetter functionGetter = new FunctionGetterBaseImpl();
@@ -27,7 +27,7 @@ public class BeanCheckerTests {
             }
             return null;
         };
-        checker = new BeanChecker<>(FunctionGetter.compose(List.of(functionGetter, customGetter)));
+        checker = new BeanChecker(FunctionGetter.compose(List.of(functionGetter, customGetter)));
     }
 
     @Test
