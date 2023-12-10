@@ -1,7 +1,7 @@
 package com.mengxinya.ys.checker.beanchecker;
 
 import com.alibaba.fastjson.JSONObject;
-import com.mengxinya.ys.checker.SimpleBooleanChecker;
+import com.mengxinya.ys.checker.SimpleJsonChecker;
 import com.mengxinya.ys.common.CheckResult;
 import com.mengxinya.ys.common.Checker;
 import com.mengxinya.ys.common.CheckerUtils;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class BeanChecker implements Checker<Object, String> {
 
-    private final FunctionGetter functionGetter;
+    protected final FunctionGetter functionGetter;
 
     public BeanChecker(FunctionGetter functionGetter) {
         this.functionGetter = functionGetter;
@@ -27,7 +27,7 @@ public class BeanChecker implements Checker<Object, String> {
         return checker.eval((JSONObject)JSONObject.toJSON(input));
     }
 
-    private Checker<JSONObject, String> toClassChecker(Class<?> tClass) {
+    protected Checker<JSONObject, String> toClassChecker(Class<?> tClass) {
         // 获取所有CheckExpr注解字段
         List<Field> fieldList = findFields(tClass);
         // 分别将这些字段转换成checker
@@ -36,13 +36,14 @@ public class BeanChecker implements Checker<Object, String> {
         return CheckerUtils.compose(checkers);
     }
 
-    private Checker<JSONObject, String> fieldToChecker(Field field) {
+
+    protected Checker<JSONObject, String> fieldToChecker(Field field) {
         String name = field.getName();
         CheckExpr[] checkExprs = field.getAnnotationsByType(CheckExpr.class);
 
         List<Checker<JSONObject, String>> checkers = Arrays.stream(checkExprs).map(checkExpr -> {
             String expr = checkExpr.value().trim().replace("${this}", "${" + name + "}");  // 替换$this关键字
-            SimpleBooleanChecker booleanChecker = new SimpleBooleanChecker(functionGetter, expr);
+            SimpleJsonChecker booleanChecker = new SimpleJsonChecker(functionGetter, expr);
             return (Checker<JSONObject, String>) input -> {
                 CheckResult<Void> result = booleanChecker.eval(input);
                 if (result.isValid()) {
@@ -65,7 +66,7 @@ public class BeanChecker implements Checker<Object, String> {
         return CheckerUtils.compose(checkers);
     }
 
-    private List<Field> findFields(Class<?> tClass) {
+    protected List<Field> findFields(Class<?> tClass) {
         return Arrays.stream(tClass.getDeclaredFields()).filter(field -> field.getAnnotationsByType(CheckExpr.class).length > 0).toList();
     }
 }
