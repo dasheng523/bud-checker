@@ -6,7 +6,7 @@
 
     <groupId>com.mengxinya.ys</groupId>
     <artifactId>bud-checker</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,7 +18,7 @@
             <dependency>
                 <groupId>com.mengxinya.ys</groupId>
                 <artifactId>bud-dependencies</artifactId>
-                <version>1.1-SNAPSHOT</version>
+                <version>1.2-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
